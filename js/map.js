@@ -84,7 +84,8 @@ var legend = d3.legendColor()
 svg.select(".legendThreshold")
     .call(legend);
 var col_names_arr = ["country", "confirmed", "recovered", "deaths"];
-var csv_file_name = "../data/cleaned.csv"
+// var csv_file_name = "../data/cleaned.csv"
+var csv_file_name = "data/cleaned.csv"
 
 
 

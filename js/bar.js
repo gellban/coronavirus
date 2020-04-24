@@ -4,7 +4,8 @@ class BarChart{
 // constructor(name) {
   constructor() {
     // invokes the setter
-    this.dataset_file_name = "../data/cleaned.csv";//"bar-data.csv";
+    // this.dataset_file_name = "../data/cleaned.csv";//"bar-data.csv";
+    this.dataset_file_name = "data/cleaned.csv";//"bar-data.csv";
     this.country_name = "United States";//"Australia";
     this.y_axes_text = "Number of Confirmed Cases";
     console.log('this.dataset_file_name', this.dataset_file_name);
@@ -90,8 +91,9 @@ class BarChart{
     console.log('##svg created');
     var preprocess_data = this.preprocess_data;
     // get the data
-    d3.csv("../data/cleaned.csv", function(error, data) {
-      if (error) throw error;
+    // d3.csv("../data/cleaned.csv", function(error, data) {
+    d3.csv("data/cleaned.csv", function(error, data) {
+        if (error) throw error;
       data = preprocess_data(data, country_name);
       // format the data, to be integers instead of strings
 

@@ -45,7 +45,7 @@ class WordCloudChart{
     var render_sub = this.render_sub;
     // this.render_sub(text, min_frequency, frequency_factor);
     // var filename = '../data/tweet_stem_world_all.csv';//"../data/corona_stem_class_website_csv.csv"
-    var filename = 'data/tweet_stem_world_all.csv';//"../data/corona_stem_class_website_csv.csv"
+    var filename = '/data/tweet_stem_world_all.csv';//"../data/corona_stem_class_website_csv.csv"
     d3.csv(filename, function(error, dataset) {
       if (error) throw error;
       console.log('##dataset - tweets:', dataset);

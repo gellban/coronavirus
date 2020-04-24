@@ -1,0 +1,33 @@
+.countries {
+  fill: none;
+  stroke: #fff;
+  stroke-linejoin: round;
+}
+.legendThreshold {
+    font-size: 12px;
+    font-family: sans-serif;
+}
+.caption {
+    fill: #000;
+    text-anchor: start;
+    font-weight: bold;
+}
+
+/* Style for Custom Tooltip */
+div.tooltip {
+  position: absolute;
+  text-align: center;
+  width: 100px;
+  height: 28px;
+  padding: 2px;
+  font: 12px sans-serif;
+  background: #B8E2F2; /*BlizzardBlue;*/
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+
+
+/*bar chart: the color of bars*/
+.bar { fill: steelblue; }

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--orginal: https://gist.github.com/palewire/d2906de347a160f38bc0b7ca57721328-->
+<head>
+
+</head>
+<meta charset="utf-8">
+  <link rel="stylesheet" href="css/index.css">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script> -->
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+  <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.js"></script>
+
+  <script src="js/common.js"></script>
+
+<body>
+  <div class="container-fluid text-left ng-scope" ng-controller="AppCtrl">
+          <div class="row content">
+            <div id="svg_map_div" class="col-sm-8">
+              <!-- <svg id="svg_map" width="800" height="500"></svg> -->
+            </div>
+            <div id="bar" class="col-sm-4">
+              <h2>Confirmed</h2>
+              <div id="svg_bar"> </div>
+            </div>
+            <div id="word_cloud_div" class="col-sm-4">
+              <h2>World Word Cloud</h2>
+              <svg id="svg_word_cloud" width="400" height="300"></svg>
+            </div>
+
+          </div>
+
+  </div>
+
+
+
+
+  <script src="js/map.js"></script>
+  <script src="js/bar.js"></script>
+  <!-- <script src="js/word_cloud.js"></script> -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-cloud/1.2.5/d3.layout.cloud.js" integrity="sha256-ZCHpV0YwYhltgHv4DqEThXxmDpHL/zyTJSnsxwwppvA=" crossorigin="anonymous"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-cloud/1.2.5/d3.layout.cloud.min.js" integrity="sha256-b+ErWHb+55MWw3HtN6cN8qhVVK6CinsBYw40lxWxhsc=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-cloud/1.2.5/d3.layout.cloud.min.js.map" integrity="undefined" crossorigin="anonymous"></script> -->
+  <script src="js/wd.js"></script>
+
+</body>
+
+
+
+
+
+
+</html>

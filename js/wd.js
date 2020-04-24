@@ -39,7 +39,7 @@ class WordCloudChart{
     // console.log('this.dataset_file_name', this.dataset_file_name);
   }
   render(country_name){
-    var min_frequency = 50,
+    var min_frequency = 1,
         frequency_factor = 200;
     var preprocess_data = this.preprocess_data;
     var render_sub = this.render_sub;

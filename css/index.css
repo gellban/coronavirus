@@ -30,4 +30,26 @@ div.tooltip {
 
 
 /*bar chart: the color of bars*/
-.bar { fill: steelblue; }
+#bar_confirmed .bar { fill: steelblue; }
+#bar_deaths .bar { fill:lightslategray; /*#E9967Adarksalmon*/; }
+#bar_recovered .bar { fill: green; }
+
+
+h1 {
+  text-align:center;
+  text-decoration-color: slategray;
+  /* background-color: red; */
+}
+
+table { 
+  display: table;
+  border-collapse: separate;
+  border-spacing: 2px;
+  border-color: gray;
+}
+table th,table td{
+  text-align:center;
+}
+#menu3 img{
+  width:80%;
+}

@@ -176,5 +176,6 @@ class WordCloudChart{
 
 
 console.log("Hashim - It's loaded!");
-var myWordCloudChart = new WordCloudChart(); //global variable
-myWordCloudChart.render('All');
+//it is slow: so I stopped it
+// var myWordCloudChart = new WordCloudChart(); //global variable
+// myWordCloudChart.render('All');

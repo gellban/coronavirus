@@ -40,13 +40,30 @@
       <!-- Menu - HOME -->
       <div id="home" class="tab-pane fade in active">
         <!-- <h3>HOME</h3> -->
-        <h3>Abstract</h3>
-        <p>The novel coronavirus named COVID-19 starting in China became a pandemic disease in the world approaching approximately 2,966,488 cases by April 26.
-          Social media like Twitter is one of sources to extract people's views. There are different views in tweets, while this study focuses on 3 class labels: awareness, myth, news.
-          In this paper, we compared 3 classifiers to predict the topics of tweets. Two of them are traditional classification algorithms. We also implemented a deep learning text classification using Embedding, CNN and Dense layers with ReLU and Softmax activation functions. In our experiments, deep learning approach outperforms the others with 92% accuracy and F1-score.
-        </p>
-        <div id="pie_chart" style="width: 800px; height: 400px;"></div>
-              
+        <div class="row content">
+          <div id="" class="col-sm-8">
+            <h3>Abstract</h3>
+            <p>The novel coronavirus named COVID-19 starting in China became a pandemic disease in the world approaching approximately 2,966,488 cases by April 26.
+              Social media like Twitter is one of sources to extract people's views. There are different views in tweets, while this study focuses on 3 class labels: awareness, myth, news.
+              In this paper, we compared 3 classifiers to predict the topics of tweets. Two of them are traditional classification algorithms. We also implemented a deep learning text classification using Embedding, CNN and Dense layers with ReLU and Softmax activation functions. In our experiments, deep learning approach outperforms the others with 92% accuracy and F1-score.
+            </p>
+            <div id="pie_chart" style="width: 800px; height: 400px;"></div>
+          </div>
+          <div id="" class="col-sm-4">
+            <div id="loading" ng-show="show_loading">
+              <h2>Loading data</h2>
+              <p>
+                Wait until the website load the data
+              </p>
+              <div class="loading_spin_label">
+                Loading ...
+              </div>
+              <div class="loader"></div>
+            </div>  
+    
+          </div>
+        </div>
+
       </div>
       <div id="menu1" class="tab-pane fade">
       <!-- Menu 1 -->

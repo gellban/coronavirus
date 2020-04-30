@@ -173,6 +173,9 @@ class BarChart{
       svg.append("g")
           .call(d3.axisLeft(y));
 
+      //stop loading spin
+      document.getElementById("loading").remove();
+
     });
   };
 };
@@ -193,3 +196,4 @@ myBarChart_recovered.render(c);
 //deaths
 myBarChart_recovered = new BarChart("deaths");
 myBarChart_recovered.render(c);
+

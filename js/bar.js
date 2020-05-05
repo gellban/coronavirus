@@ -1,10 +1,5 @@
-// https://bl.ocks.org/d3noob/bdf28027e0ce70bd132edc64f1dd7ea4
-// set the dimensions and margins of the graph
 class BarChart{
-// constructor(name) {
   constructor(chart_type) {
-    // invokes the setter
-    // this.dataset_file_name = "../data/cleaned.csv";//"bar-data.csv";
     this.dataset_file_name = "data/cleaned.csv";//"bar-data.csv";
     this.country_name = "United States";//"Australia";
     this.y_axes_text = "Number of " + chart_type + " Cases";//"Number of Confirmed Cases";
@@ -18,11 +13,8 @@ class BarChart{
   preprocess_data(dataset, country_name, chart_type){
     console.log('dataset', dataset);
     var data = [];
-    // var chart_type = this.chart_type;
     dataset.forEach(function(d) {
-      // console.log("dataset, d:", d, ', d.updated:', d.updated);
       if (d.country == country_name){
-        // data.push({"updated": d.updated, "confirmed": d.confirmed});
         console.log('#########^^^####this.chart_type', chart_type);
         data.push({"updated": d.updated, "value": d[chart_type]});
       }
@@ -61,11 +53,11 @@ class BarChart{
   }
   render(p_country_name){
     this.country_name = p_country_name || this.country_name;
-    var dataset_file_name = this.dataset_file_name;//"../data/cleaned.csv";//"bar-data.csv";
-    var country_name = this.country_name;//"China";//"Australia";
-    var y_axes_text = this.y_axes_text;//"Number of Confirmed Cases";
-    var div_name = this.div_name;//"#svg_bar";
-    var svg_tag_name = this.svg_tag_name;//"svg";
+    var dataset_file_name = this.dataset_file_name;
+    var country_name = this.country_name;
+    var y_axes_text = this.y_axes_text;
+    var div_name = this.div_name;
+    var svg_tag_name = this.svg_tag_name;
     var chart_type = this.chart_type;
     console.log('#########this.chart_type', chart_type);
 
@@ -89,26 +81,13 @@ class BarChart{
         // .ticks(d3.timeDay, 2 )
         .tickFormat(d3.timeFormat("%d/%m"))//;// format the x axis
         ;
-    // var xAxis = d3.axisBottom(); 
-           
-    // var xAxis = d3.axisBottom(x)
-    //     .ticks(d3.timeDay, 2 )
-    //     .tickFormat(d3.timeFormat("%m %d"))
-    //     // .tickFormat(d3.timeFormat("%d/%m"))//;// format the x axis
-    //     ;
-    // let xAxis = d3
-    //     .axisBottom(x)
-    //     .ticks(d3.timeDay, 3)
-    //     .tickFormat(d3.timeFormat("%a %d"))        
+
 
 
     var svg_id = d3.select(div_name).select(svg_tag_name);
     if (svg_id){//delete current chart
       svg_id.remove();
     }
-    // append the svg object to the body of the page
-    // append a 'group' element to 'svg'
-    // moves the 'group' element to the top left margin
     var svg = d3.select(div_name).append(svg_tag_name)
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
@@ -123,23 +102,17 @@ class BarChart{
         if (error) throw error;
         console.log('##data, before:', data);
         data = preprocess_data(data, country_name, chart_type);
-      // format the data, to be integers instead of strings
 
       console.log('##data:', data);
-      // Scale the range of the data in the domains
       x.domain(data.map(function(d) { return d.updated; }));
-      // y.domain([0, d3.max(data, function(d) { return d.confirmed; })]);
       y.domain([0, d3.max(data, function(d) { return d.value; })]);
 
-      // append the rectangles for the bar chart
       svg.selectAll(".bar")
           .data(data)
         .enter().append("rect")
           .attr("class", "bar")
           .attr("x", function(d) { return x(d.updated); })
           .attr("width", x.bandwidth())
-          // .attr("y", function(d) { return y(d.confirmed); })
-          // .attr("height", function(d) { return height - y(d.confirmed); });
           .attr("y", function(d) { return y(0); })
           .attr("height", function(d) { return height - y(0); });
 
@@ -147,17 +120,13 @@ class BarChart{
           svg.selectAll("rect")
             .transition()
             .duration(800)
-            // .attr("y", function(d) { return y(d.confirmed); })
             .attr("y", function(d) { return y(d.value); })
-            // .attr("height", function(d) { return height - y(d.confirmed); })
             .attr("height", function(d) { return height - y(d.value); })
-            .delay(function(d,i){/*console.log(i);*/ return(i*20)});
+            .delay(function(d,i){return(i*20)});
 
-      // add the x Axis
+      // The x-axis
       svg.append("g")
           .attr("transform", "translate(0," + height + ")")
-          //.call(d3.axisBottom(x));
-          // .call(xAxis);
           .call(xAxis)
                   
           .selectAll("text")
@@ -167,9 +136,7 @@ class BarChart{
           .attr("transform", "rotate(65)")
           .style("text-anchor", "start");          
 
-      // svg.selectAll(".tick text").remove();
-                
-      // add the y Axis
+      // The y-axis
       svg.append("g")
           .call(d3.axisLeft(y));
 

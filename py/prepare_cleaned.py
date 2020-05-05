@@ -26,9 +26,6 @@ print(df.head())
 
 del_count = 0
 for index, row in df.iterrows():
-    # print(row['iso_code'], row['date'], row['new_cases'], row['new_deaths'])
-    # row['country'] = 'USA'
-    # print(row)
     mm = row['updated'][:2]
 
     # if row['iso_code'] not in coutries_codes or mm != '04': #row['confirmed'] < 1 and row['deaths'] < 1:

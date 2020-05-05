@@ -1,8 +1,6 @@
-//https://stackoverflow.com/questions/43574348/grouping-a-csv-file-in-d3
 var d3groupby = function(csv_file_name, col_names_arr, callback){
-  // var col_names_arr = ["country", "confirmed", "recovered", "deaths"];
   console.log('csv_file_name:', csv_file_name, 'col_names_arr:', col_names_arr);
-  var data;// = d3.csv.parse(d3.select('#data_csv').text());
+  var data;
   d3.csv(csv_file_name, function(err, data_temp) {
     if (err) {console.log('Error reading csv file');}
     console.log('Read csv file successfully');
@@ -16,11 +14,8 @@ var d3groupby = function(csv_file_name, col_names_arr, callback){
 
     console.log('data.forEach');
     data.forEach(function(d){
-    	//group and organize your data as needed here
       valuesByKey = d3.nest()
-      //set the decade as your key
       .key(function(d) {return d[key_name];})
-      //rollup and sum your cat values by decade
       .rollup((function(d) {
         return {
             col1: d3.sum(d, function(e) { return e[col1_name]; }),
@@ -30,32 +25,16 @@ var d3groupby = function(csv_file_name, col_names_arr, callback){
       }))
       .entries(data);
     });
-    // console.log('valuesByKey', valuesByKey);
     callback(valuesByKey);
   });
 
-  // rollback(valuesByKey);
+ 
 };//d3groupby
 
 
 var groupByArrayJson = function(data, col_names_arr){
   var key_name = col_names_arr[0];
   var value_name = col_names_arr[1];
-  // data.forEach(function(d){
-  //   //group and organize your data as needed here
-  //   valuesByKey = d3.nest()
-  //   //set the decade as your key
-  //   .key(function(d) {return d[key_name];})
-  //   //rollup and sum your cat values by decade
-  //   .rollup((function(d) {
-  //     return {
-  //         value: d3.sum(d, function(e) { return e[value_name]; }),
-  //     };
-  //   }))//.rollup
-  //   .entries(data);
-  // });//data.forEach
-  // console.log('groupByArrayJson, data:', data);
-  // return data;
 
   var result = [];
   array = data

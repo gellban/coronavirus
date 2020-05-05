@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!--orginal: https://gist.github.com/palewire/d2906de347a160f38bc0b7ca57721328-->
 <head>
 
 </head>
@@ -9,25 +8,17 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script> -->
   <script src="https://d3js.org/d3.v4.min.js"></script>
   <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
   <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.js"></script>
 
-  <!-- <script src="lib/d3.v5.8.2.min.js" charset="utf-8"></script> -->
-  <!-- <script src="https://d3js.org/d3.v5.min.js"></script>   -->
-  <!-- <script src="js/lib/c3-0.7.15/c3.js"></script> -->
   <script src="js/lib/c3.js"></script>
-  <!-- <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/c3/0.1.29/c3.js"></script> -->
 
   <script src="js/common.js"></script>
 
 <body>
-  <div class="container-fluid text-left ng-scope" ng-controller="AppCtrl">
-    <!-- <h2>Dynamic Tabs</h2>
-    <p>To make the tabs toggleable, add the data-toggle="tab" attribute to each link. Then add a .tab-pane class with a unique ID for every tab and wrap them inside a div element with class .tab-content.</p> -->
-  
+  <div class="container-fluid text-left ng-scope" ng-controller="AppCtrl">  
     <ul class="nav nav-tabs">
       <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
       <li><a data-toggle="tab" href="#menu1">World Map</a></li>
@@ -39,7 +30,6 @@
     <div class="tab-content">
       <!-- Menu - HOME -->
       <div id="home" class="tab-pane fade in active">
-        <!-- <h3>HOME</h3> -->
         <div class="row content">
           <div id="" class="col-sm-8">
             <h3>Abstract</h3>
@@ -67,8 +57,6 @@
       </div>
       <div id="menu1" class="tab-pane fade">
       <!-- Menu 1 -->
-      <!-- <h3>Menu 1</h3> -->
-        <!-- <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> -->
         <div class="row content">
           <div id="svg_map_div" class="col-sm-8">
             <!-- <svg id="svg_map" width="800" height="500"></svg> -->
@@ -82,14 +70,6 @@
             <h2>Deaths</h2>
             <div id="svg_bar_deaths"> </div>
           </div>
-          <!-- <div id="bar_recovered" class="col-sm-4">
-            <h2>Recovered</h2>
-            <div id="svg_bar_recovered"> </div>
-          </div> -->
-          <!-- <div id="word_cloud_div" class="col-sm-4">
-            <h2>World Word Cloud</h2>
-            <svg id="svg_word_cloud" width="400" height="300"></svg>
-          </div> -->
           <div id="bar_deaths" class="col-sm-4">
             <p>
               <a href="https://ourworldindata.org/coronavirus-source-data">Dataset Source</a>
@@ -111,7 +91,6 @@
       <!-- Menu 3 -->
       <div id="menu3" class="tab-pane fade">
         <h3>Word Clouds</h3>
-        <!-- <p>For all class labels: Awareness, Myth, News</p> -->
         <h4></h4>
         <table>
           <tr>
@@ -148,10 +127,7 @@
       </div>
       <!-- Menu 4 -->
       <div id="menu4" class="tab-pane fade">
-        <!-- <h3>Performance</h3> -->
-        <!-- <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p> -->
         <img src="img/performance.png" width="600">
-
       </div>
     </div> 
     

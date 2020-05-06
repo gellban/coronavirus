@@ -14,6 +14,11 @@ cd py/src
 conda activate ir
 python svm.py
 
+# To run the Naive Bayes:
+<!-- cd py/src -->
+conda activate ir
+python naive_bayes.py
+
 # to run deep learing:
 conda deactivate 
 <!-- cd py/src -->

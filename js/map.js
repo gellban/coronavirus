@@ -20,15 +20,19 @@ var tooltip = d3.select("body")
     .style("opacity", 0);
 
 var path = d3.geoPath();
-var projection = d3.geoNaturalEarth()
-    .scale(width / 2 / Math.PI)
-    .translate([width / 2, height / 2])
+var projection_scale = width / 2 / Math.PI;
+var projection_translate = [width / 2, height / 2];
+
 
 var path = d3.geoPath()
-    .projection(projection);
+    .projection(d3.geoNaturalEarth()
+                .scale(projection_scale)
+                .translate([width / 2, height / 2])
+    );
 
 var data = d3.map();
 var country_codes = d3.map();
+var colorScheme = d3.schemeBlues[6]; 
 var colorScheme = d3.schemeReds[6]; 
 colorScheme.unshift("#eee")
 var colorScale = d3.scaleThreshold()
@@ -42,32 +46,34 @@ var csv_file_name = "data/cleaned.csv"
 // Lables
 var g = svg.append("g")
     .attr("class", "legendThreshold")
-    .attr("transform", "translate(20,20)")
+    .attr("transform", "translate(40,20)")
     ;
 
-
+// add a label of level boxes
 g.append("text")
     .attr("class", "caption")
     .attr("x", 20)
     .attr("y", 20)
-    .text("#Confirmed Cases");
+    .text("#Confirmed Cases")
+    
+    ;
 
 var legend = d3.legendColor()
     .labels(function (d) {
-        return labels[d.i];
+        return labels[d.i];//set color
     })
     .shapePadding(20)
     .scale(colorScale);
 svg.select(".legendThreshold")
     .call(legend)
-    .attr("transform", "translate(20,20)")
+    .attr("transform", "translate(20,40)")
     ;
 
 d3groupby(csv_file_name, col_names_arr, function (dataset) {
     console.log('#####dataset, grouped', dataset);
     dataset.forEach(function (d) {
         // console.log('dataset.forEach, d:', d, 'd.value.col1', d.value.col1);
-        if (d.key=="Russia"){
+        if (d.key=="Russia"){//Check name
             console.log('####@@@###dataset.forEach, d:', d, 'd.value.col1', d.value.col1);
 
         }
@@ -85,7 +91,7 @@ d3groupby(csv_file_name, col_names_arr, function (dataset) {
     d3.queue()
         .defer(d3.json, "geomap/world_geo.geojson") //geo svg map json dataset
         .defer(d3.csv, "data/country_codes.csv", (d) => {
-            country_codes.set(d.alpha_3, d.name);
+            country_codes.set(d.alpha_3, d.name);//set country
         }) //save country 3-alpha abbrev
         .await(render_map);
 }); //read data
@@ -96,11 +102,11 @@ function test() {
 
 function render_map(error, topo) {
     console.log('start ready().');
-    if (error) throw error;
+    if (error) throw error;//check error
 
 
 
-    // Draw the map
+    // Render all countries on the map
     svg.append("g")
         .attr("class", "countries")
         .selectAll("path")
@@ -114,7 +120,7 @@ function render_map(error, topo) {
             return colorScale(d.value);
         })
         .attr("d", path)
-        .on("mouseover", function (d, i) {
+        .on("mouseover", function (d, i) {//hover
             var currentState = this;
             d3.select(this)
                 .style('stroke', '#ccc');
@@ -127,14 +133,14 @@ function render_map(error, topo) {
                 .style("top", (d3.event.pageY - 28) + "px")
                 .style("opacity", 1);
         })
-        .on('mouseout', function (d, i) {
+        .on('mouseout', function (d, i) {//over
             d3.select(this).style('stroke', '#fff');
 
             tooltip.transition()
                 .duration(500)
                 .style("opacity", 0);
         })
-        .on("click", function (d) {
+        .on("click", function (d) {//interactive
             //   var country_name = country_codes.get(d.id);//get country name
             var country_name = d.properties.name; //get country name
             //   console.log('properties',d.properties.name);

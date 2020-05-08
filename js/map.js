@@ -87,7 +87,6 @@ var map_setup = function(){
         console.log('data.get("Russia")', data.get("Russia"));
     
         d3.queue()
-            // .defer(d3.json, "geomap/world_geo.geojson") //geo svg map json dataset
             .defer(d3.json, "js/geomap/world_geo.geojson") //geo svg map json dataset
             .defer(d3.csv, "data/country_codes.csv", (d) => {
                 country_codes.set(d.alpha_3, d.name);//set country

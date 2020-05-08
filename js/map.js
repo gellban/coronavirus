@@ -52,7 +52,7 @@ var map_setup = function(){
         .attr("class", "caption")
         .attr("x", 20)
         .attr("y", 20)
-        .text("#Confirmed Cases")
+        .text("#Confirmed Cases (Note: Click on any country to show the bar charts)")
         
         ;
     

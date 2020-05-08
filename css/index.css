@@ -78,14 +78,16 @@ table th,table td{
 div.tooltip {
   position: absolute;
   text-align: center;
-  width: 100px;
+  width: 150px;
   height: 28px;
   padding: 2px;
-  font: 12px sans-serif;
-  background: #B8E2F2;
+  font: 14px sans-serif;
+  background: lightslategray;/*#B8E2F2;*/
   border: 0px;
-  border-radius: 8px;
+  border-radius: 18px;
   pointer-events: none;
+
+  
 }
 
 

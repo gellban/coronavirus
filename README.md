@@ -8,6 +8,9 @@ cd py/src
 conda env create -f ir.yml  
 conda env create -f mlstmfcn.yml  
 
+In case you encounter any issue of conda installation, you can use an alternative option via pip to install the Python libraries (‘worldcloud’ ,‘gensim’,‘keras’, and ‘tensorflow’).  
+
+Using Conda or pip should allow you to run our SVM, Naïve Bayes, and DL models and get results.
 
 # To run the SVM:
 cd py/src  

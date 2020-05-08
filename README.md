@@ -10,7 +10,7 @@ conda env create -f mlstmfcn.yml
 
 In case you encounter any issue of conda installation, you can use an alternative option via pip to install the Python libraries (‘worldcloud’ ,‘gensim’,‘keras’, and ‘tensorflow’. If you still need more libraries, please check ir.yml and mlstmfcn.yml to view the required version of a library.  
 
-Using Conda or pip should allow you to run our SVM, Naïve Bayes, and DL models and get results. To run the programs for pip (not conda), you do not need the conda activate commands below.
+Using Conda or pip should allow you to run our SVM, Naïve Bayes, and DL models and get results. To run the programs for pip (not conda), you do not need the "conda activate" and "conda deactivate" commands below.
 
 # To run the SVM:
 cd py/src  

@@ -42,25 +42,31 @@ var map_setup = function(){
     var csv_file_name = "data/cleaned.csv"
     
     // Lables
-    var g = svg.append("g")
-        .attr("class", "legendThreshold")
-        .attr("transform", "translate(40,20)")
+    var g_head = svg.append("g")
+        .attr("class", "legendThreshold1")
+        .attr("transform", "translate(0,10)")
         ;
-    
     // add a label of level boxes
-    g.append("text")
+    g_head.append("text")
         .attr("class", "caption")
         .attr("x", 20)
         .attr("y", 20)
         .text("#Confirmed Cases (Note: Click on any country to show the bar charts)")
         
         ;
+
+    var g = svg.append("g")
+        .attr("class", "legendThreshold")
+        .attr("transform", "translate(40,20)")
+        ;
     
+    //note \u00A0 is for single space
     var legend = d3.legendColor()
         .labels(function (d) {
-            return labels[d.i];//set color
+            return '\u00A0\u00A0\u00A0\u00A0' + labels[d.i];//set color
         })
         .shapePadding(20)
+        // .attr('text-anchor','middle')
         .scale(colorScale);
     svg.select(".legendThreshold")
         .call(legend)
